@@ -1,0 +1,61 @@
+.navbar-brand {
+    cursor: pointer;
+    .nav-link {
+        @include flex-items(flex-start center);
+        color: $font-dark;
+        &.trigger {
+            color: $font-light;
+        }
+    }
+    .nav-logo {
+        margin-top: 0.4rem;
+        font-size: $base-font-lg;
+        color: $font-secondary;
+    }
+    .nav-logo.logo-active {
+        font-size: $base-font-lg;
+    }
+    p {
+        font-size: $base-font-lg * 0.8;
+        font-family: Roboto;
+        font-weight: bolder;
+        margin-left: $base-margin;
+        display: none;
+    }
+    .nav-name-active {
+        display: block;
+    }
+    .ham-menu-container {
+        position: absolute;
+        top: 0;
+        // left: 100%;
+        right: 0;
+
+        .ham-menu {
+            font-size: $base-font-md;
+            color: $dark-primary-bg;
+            &.active {
+                color: $font-light;
+            }
+        }
+    }
+}
+
+@include breakpoint("md") {
+    .navbar-brand {
+        .nav-logo.logo-active {
+            font-size: $base-font-xl;
+        }
+        p {
+            font-size: $base-font-lg;
+        }
+    }
+}
+
+@include breakpoint("lg") {
+    .navbar-brand {
+        .ham-menu {
+            display: none;
+        }
+    }
+}

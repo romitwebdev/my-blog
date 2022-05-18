@@ -1,0 +1,25 @@
+// color pallette
+$dark-primary-bg: hsl(0, 0%, 15%);
+$dark-bg-fade: hsl(0, 0%, 13%);
+$light-primary-bg: hsl(180, 100%, 100%);
+$font-dark: hsl(0, 0%, 15%);
+$font-light: hsl(180, 100%, 100%);
+$font-primary: hsl(193, 82%, 33%);
+$font-secondary: hsl(156, 79%, 37%);
+
+// margin
+$base-margin: 0.75rem;
+
+// padding
+$base-padding: 0.75rem;
+
+// radius
+$base-radius: 0.75rem;
+
+// font
+$base-font-size: 1rem;
+$base-font-sm: $base-font-size * 0.75;
+$base-font-md: $base-font-size;
+$base-font-lg: $base-font-size * 1.5;
+$base-font-xl: $base-font-size * 2;
+$base-font-xxl: $base-font-size * 3;

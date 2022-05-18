@@ -1,0 +1,48 @@
+.nav-items {
+    .nav-links {
+        cursor: pointer;
+        margin: $base-margin * 0.5 0;
+        padding: $base-padding * 0.5 0;
+        @include flex-items(flex-start, center);
+        &.active {
+            color: rgb(255, 0, 85);
+        }
+        .nav-icons {
+            font-size: $base-font-lg * 0.8;
+            color: $font-primary;
+        }
+        p {
+            font-size: $base-font-size;
+            margin-left: $base-margin;
+            display: none;
+        }
+        .nav-name-active {
+            display: block;
+        }
+    }
+}
+
+@include breakpoint("md") {
+    .nav-items {
+        .nav-links {
+            padding: $base-padding 0;
+            margin: $base-margin 0;
+            .nav-icons {
+                font-size: $base-font-lg;
+            }
+        }
+    }
+}
+@include breakpoint("lg") {
+    .nav-items {
+        @include flex-items(space-around, center);
+
+        .nav-links {
+            margin-left: $base-margin * 5;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+}

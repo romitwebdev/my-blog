@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FunctionComponent, ReactNode } from "react";
+import ContextProvider from "./ContextProvider";
+import { BrowserRouter, Routes, NavLink, Route } from "react-router-dom";
+import Home from "./components/comp/Home";
+import Navbar from "./components/comp/Navbar";
+import BlogPost from "./components/comp/BlogPost";
+import Footer from "./components/comp/Footer";
+import BlogView from "./components/comp/BlogView";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: FunctionComponent<ReactNode> = () => {
+    return (
+        <BrowserRouter>
+            <ContextProvider>
+                <div className="App">
+                    <Navbar />
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/blogpost" element={<BlogPost />} />
+                        <Route path="/blog/:id" element={<BlogView />} />
+                    </Routes>
+                    <Footer />
+                </div>
+            </ContextProvider>
+        </BrowserRouter>
+    );
+};
 
 export default App;

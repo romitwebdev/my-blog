@@ -1,0 +1,49 @@
+.footer {
+    width: 100%;
+    height: 20vh;
+    background: $font-dark;
+    position: relative;
+    z-index: 2;
+    @include flex-items(center, center);
+    &.active {
+        background: $dark-bg-fade;
+    }
+
+    .footer-holder {
+        color: $font-light;
+        width: 100%;
+        height: auto;
+        @include flex-items(center, center);
+        flex-direction: column;
+        // padding: $base-padding * 5 0;
+        font-size: $base-font-sm;
+        span {
+            margin-bottom: $base-margin;
+            cursor: pointer;
+        }
+        .social-icons {
+            font-size: $base-font-lg;
+            margin-left: $base-margin;
+            cursor: pointer;
+        }
+    }
+}
+
+@include breakpoint("md") {
+    .footer {
+        .footer-holder {
+            flex-direction: row;
+            justify-content: space-around;
+            font-size: initial;
+            span {
+                margin: 0;
+            }
+        }
+    }
+}
+
+@include breakpoint("lg") {
+    .footer {
+        height: 25vh;
+    }
+}

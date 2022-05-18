@@ -1,0 +1,48 @@
+.navbar {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: $base-padding $base-padding * 1.2;
+    box-shadow: 2px 2px 8px $dark-primary-bg, -2px -2px 8px $light-primary-bg;
+    z-index: 1;
+    background-color: $light-primary-bg;
+    color: $font-dark;
+
+    &.active {
+        background-color: $dark-primary-bg;
+        color: $font-light;
+        box-shadow: 2px 2px 8px $dark-bg-fade, -2px -2px 8px $dark-bg-fade;
+    }
+
+    .navbar-holder {
+        width: auto;
+        height: 100%;
+        @include flex-items(flex-start, flex-start);
+        flex-direction: column;
+        margin-top: 0.7rem;
+    }
+}
+
+@include breakpoint("xs") {
+    .navbar {
+        width: auto;
+    }
+}
+
+@include breakpoint("lg") {
+    .navbar {
+        width: 100%;
+        height: 10vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        .navbar-holder {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0;
+        }
+    }
+}

@@ -1,0 +1,125 @@
+.profile-container {
+    position: relative;
+
+    .profile-icons {
+        padding: $base-padding 0;
+        cursor: pointer;
+        @include flex-items(flex-start, flex-start);
+        flex-direction: column;
+        .profile-icons-holder {
+            @include flex-items(flex-start, center);
+
+            .user-icon {
+                font-size: $base-font-lg * 0.8;
+                color: $font-primary;
+            }
+            p {
+                font-size: $base-font-md;
+                font-weight: bold;
+                // margin-top: $base-margin;
+                margin-left: $base-margin;
+                display: none;
+            }
+            .nav-name-active {
+                display: block;
+            }
+            .drop-menu {
+                margin-left: $base-margin;
+                display: none;
+            }
+        }
+    }
+    .drop-icons-holder {
+        .add-blog-link {
+            &:visited {
+                color: inherit;
+            }
+        }
+
+        .drop-items {
+            @include flex-items(flex-start, center);
+            margin: $base-margin * 1.5 0;
+
+            .drop-items-list {
+                display: block;
+                font-weight: normal;
+                margin-top: 0;
+                margin-left: $base-margin;
+                &.active {
+                    display: none;
+                }
+            }
+        }
+        .drop-icons {
+            font-size: $base-font-lg * 0.8;
+            color: $font-primary;
+        }
+    }
+    .switch-contrast {
+        font-size: $base-font-lg * 0.8;
+        color: $font-primary;
+    }
+}
+
+@include breakpoint("md") {
+    .profile-container {
+        .profile-icons {
+            .profile-icons-holder {
+                .user-icon {
+                    font-size: $base-font-lg;
+                }
+            }
+        }
+        .drop-icons-holder {
+            .drop-icons {
+                font-size: $base-font-lg;
+            }
+        }
+        .switch-contrast {
+            font-size: $base-font-lg;
+            margin-top: $base-margin * 2;
+        }
+    }
+}
+
+@include breakpoint("lg") {
+    .profile-container {
+        @include flex-items(center, baseline);
+        .profile-icons {
+            flex-direction: row;
+            justify-self: center;
+            align-items: center;
+            .profile-icons-holder {
+                .drop-menu {
+                    display: block;
+                }
+            }
+            .drop-icons-holder {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0%;
+                width: 10rem;
+                height: auto;
+                cursor: pointer;
+                border: 1px solid $font-light;
+                background-color: $dark-bg-fade;
+                border-radius: 5px;
+                padding: $base-padding;
+                text-align: left;
+                &.active {
+                    display: block;
+                }
+                .drop-items {
+                    .drop-items-list {
+                        color: $font-light;
+                    }
+                }
+            }
+            .switch-contrast {
+                margin-top: 0;
+                margin-left: $base-margin * 2;
+            }
+        }
+    }
+}

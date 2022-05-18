@@ -1,0 +1,12 @@
+.home {
+    width: 100%;
+    overflow: hidden;
+    @include flex-items(center, center);
+    flex-direction: column;
+}
+
+@include breakpoint("lg") {
+    .home {
+        flex-direction: column;
+    }
+}
