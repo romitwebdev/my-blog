@@ -25,4 +25,30 @@ export type DataTypes = {
     setFilterItems: React.Dispatch<
         React.SetStateAction<DataTypes["filterItems"]>
     >;
+
+    users: {
+        id: Number;
+        firstName: string;
+        lastName: string;
+        password: string;
+        isAdmin: boolean;
+    }[];
+
+    setUsers: React.Dispatch<React.SetStateAction<DataTypes["users"]>>;
+
+    currentUser: {
+        id: Number;
+        firstName: string;
+        lastName: string;
+        password: string;
+        isAdmin: boolean;
+    };
+
+    setCurrentUser: React.Dispatch<
+        React.SetStateAction<DataTypes["currentUser"]>
+    >;
+
+    login: boolean;
+
+    setLogin: React.Dispatch<React.SetStateAction<DataTypes["login"]>>;
 };

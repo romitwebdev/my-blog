@@ -1,21 +1,18 @@
-import { FunctionComponent, ReactNode, useMemo } from "react";
+import { FunctionComponent, ReactNode } from "react";
 import { useParams } from "react-router-dom";
-
 import { ContextFunc } from "../../ContextProvider";
 
 const BlogView: FunctionComponent<ReactNode> = () => {
-    const { hamView, setHamView, contrast, data, setData, filterItems } =
-        ContextFunc();
+    const { contrast, data } = ContextFunc();
 
     const { id } = useParams();
 
-    console.log(id);
+    // get id from params and filter the id from data
 
-    const item = data.filter((x) => x.id === Number(id));
-
-    console.log(item);
+    const item = data.filter((dt) => dt.id === Number(id));
 
     return (
+        // if items then show items else show message
         <>
             <section
                 className={contrast ? "blog-section active" : "blog-section"}

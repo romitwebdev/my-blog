@@ -11,8 +11,9 @@ import {
     RiLogoutBoxFill,
     RiMoonClearFill,
 } from "react-icons/ri";
-import { BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
+import { BsFillSunFill } from "react-icons/bs";
 import { BiAddToQueue } from "react-icons/bi";
+import { IoCreateSharp } from "react-icons/io5";
 import { IconContext } from "react-icons";
 import { ContextFunc } from "../../ContextProvider";
 import { GoKebabVertical } from "react-icons/go";
@@ -22,14 +23,41 @@ interface Idrop {
     dropMenu: boolean;
 }
 
+interface IcurrentProps {
+    initialData: {
+        id: Number;
+        firstName: string;
+        lastName: string;
+        password: string;
+        isAdmin: boolean;
+    };
+}
+
+let initialData: IcurrentProps["initialData"] = {
+    id: 0,
+    firstName: "",
+    lastName: "",
+    password: "",
+    isAdmin: false,
+};
+
 const NavProfile: FunctionComponent<ReactNode> = () => {
-    const { hamView, contrast, setContrast } = ContextFunc();
+    const {
+        hamView,
+        contrast,
+        setContrast,
+        currentUser,
+        setCurrentUser,
+        login,
+        setLogin,
+    } = ContextFunc();
     const [dropMenu, setDropMenu] = useState<Idrop["dropMenu"]>(false);
     const dropRef = useRef<HTMLDivElement>(null!);
 
+    // check the dropRef and argument whenever user click outside the dropmenu
+
     function handleDropMenu(e: any) {
         if (!dropRef.current.contains(e.target)) {
-            console.log("foo");
             setDropMenu(false);
         }
     }
@@ -42,6 +70,13 @@ const NavProfile: FunctionComponent<ReactNode> = () => {
         };
     }, []);
 
+    // set the currentUser to initial data and set login to false
+
+    const handleLogout = () => {
+        setLogin(false);
+        setCurrentUser(initialData);
+    };
+
     return (
         <>
             <div className="profile-container">
@@ -52,12 +87,22 @@ const NavProfile: FunctionComponent<ReactNode> = () => {
                         >
                             <FaUserCircle />
                         </IconContext.Provider>
-                        <p className={hamView ? "nav-name-active" : ""}>John</p>
+                        {/* checks login and show  first name */}
+                        <p className={hamView ? "nav-name-active" : ""}>
+                            Hello,{" "}
+                            {login
+                                ? currentUser.firstName
+                                    ? currentUser.firstName
+                                    : ""
+                                : ""}
+                        </p>
+                        {/* adding ref to the div to check if user has clicked on drop menu or not */}
 
                         <div ref={dropRef}>
                             <IconContext.Provider
                                 value={{ className: "drop-menu" }}
                             >
+                                {/* show and hide drop menu */}
                                 <GoKebabVertical
                                     onClick={() => setDropMenu(!dropMenu)}
                                 />{" "}
@@ -71,42 +116,91 @@ const NavProfile: FunctionComponent<ReactNode> = () => {
                                 : "drop-icons-holder"
                         }
                     >
-                        <NavLink to="/blogpost" className="add-blog-link">
-                            <div className="drop-items">
+                        {/* login then show add blog else nothing */}
+                        {login ? (
+                            <NavLink to="/blogpost" className="add-blog-link">
+                                <div className="drop-items">
+                                    <IconContext.Provider
+                                        value={{ className: "drop-icons" }}
+                                    >
+                                        <BiAddToQueue />{" "}
+                                    </IconContext.Provider>
+                                    <p
+                                        className={
+                                            hamView
+                                                ? "drop-items-list"
+                                                : "drop-items-list active"
+                                        }
+                                    >
+                                        Add Blog
+                                    </p>
+                                </div>
+                            </NavLink>
+                        ) : (
+                            ""
+                        )}
+
+                        {!login ? (
+                            <>
+                                <NavLink to="/login">
+                                    <div className="drop-items">
+                                        <IconContext.Provider
+                                            value={{ className: "drop-icons" }}
+                                        >
+                                            <RiLoginBoxFill />
+
+                                            <p
+                                                className={
+                                                    hamView
+                                                        ? "drop-items-list"
+                                                        : "drop-items-list active"
+                                                }
+                                            >
+                                                Login
+                                            </p>
+                                        </IconContext.Provider>
+                                    </div>
+                                </NavLink>
+
+                                <NavLink to="/signup">
+                                    <div className="drop-items">
+                                        <IconContext.Provider
+                                            value={{ className: "drop-icons" }}
+                                        >
+                                            <IoCreateSharp />
+
+                                            <p
+                                                className={
+                                                    hamView
+                                                        ? "drop-items-list"
+                                                        : "drop-items-list active"
+                                                }
+                                            >
+                                                Signup
+                                            </p>
+                                        </IconContext.Provider>
+                                    </div>
+                                </NavLink>
+                            </>
+                        ) : (
+                            <div className="drop-items" onClick={handleLogout}>
                                 <IconContext.Provider
                                     value={{ className: "drop-icons" }}
                                 >
-                                    <BiAddToQueue />{" "}
-                                </IconContext.Provider>
-                                <p
-                                    className={
-                                        hamView
-                                            ? "drop-items-list"
-                                            : "drop-items-list active"
-                                    }
-                                >
-                                    Add Blog
-                                </p>
-                            </div>
-                        </NavLink>
+                                    <RiLogoutBoxFill />
 
-                        <div className="drop-items">
-                            <IconContext.Provider
-                                value={{ className: "drop-icons" }}
-                            >
-                                <RiLoginBoxFill />
-                                {/* <RiLogoutBoxFill /> */}{" "}
-                                <p
-                                    className={
-                                        hamView
-                                            ? "drop-items-list"
-                                            : "drop-items-list active"
-                                    }
-                                >
-                                    Login
-                                </p>
-                            </IconContext.Provider>
-                        </div>
+                                    <p
+                                        className={
+                                            hamView
+                                                ? "drop-items-list"
+                                                : "drop-items-list active"
+                                        }
+                                    >
+                                        Logout
+                                    </p>
+                                </IconContext.Provider>
+                            </div>
+                        )}
                     </div>
                     <IconContext.Provider
                         value={{ className: "switch-contrast" }}

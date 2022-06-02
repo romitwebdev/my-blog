@@ -8,6 +8,7 @@ import { NavLink } from "react-router-dom";
 const Logo: FunctionComponent<ReactNode> = () => {
     const { hamView, setHamView, contrast, setFilterItems } = ContextFunc();
 
+    // toggle hamview
     function handleHamView() {
         setHamView((prevState) => !prevState);
     }

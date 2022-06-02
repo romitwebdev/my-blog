@@ -25,4 +25,37 @@ export const Data: DataTypes = {
     filterItems: "all",
 
     setFilterItems: () => {},
+
+    users: [
+        {
+            id: Date.now(),
+            firstName: "romit",
+            lastName: "poudel",
+            password: "hello world",
+            isAdmin: true,
+        },
+        {
+            id: Date.now(),
+            firstName: "luigi",
+            lastName: "poudel",
+            password: "123",
+            isAdmin: false,
+        },
+    ],
+
+    setUsers: () => {},
+
+    currentUser: {
+        id: Date.now(),
+        firstName: "",
+        lastName: "",
+        password: "",
+        isAdmin: false,
+    },
+
+    setCurrentUser: () => {},
+
+    login: false,
+
+    setLogin: () => {},
 };

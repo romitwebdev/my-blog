@@ -6,14 +6,17 @@ import { IconContext } from "react-icons";
 import { ContextFunc } from "../../ContextProvider";
 
 const NavItems: FunctionComponent<ReactNode> = () => {
-    const { hamView, setHamView, setFilterItems, filterItems, data, setData } =
-        ContextFunc();
+    const { hamView, setFilterItems, filterItems } = ContextFunc();
+
+    //  takse the argument from nav items list and set the filterItems
 
     function handleCats(cats: string) {
         setFilterItems(cats);
     }
 
     return (
+        // change the color of nav items according to filterItems
+        //  show and hide navList names according to hamview
         <>
             <div className="nav-items">
                 <div

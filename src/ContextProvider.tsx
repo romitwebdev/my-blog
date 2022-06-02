@@ -4,7 +4,6 @@ import React, {
     createContext,
     useState,
     useContext,
-    useReducer,
 } from "react";
 import { Data } from "./components/interface/Data";
 import { DataTypes } from "./components/interface/DataTypes";
@@ -32,6 +31,14 @@ const ContextProvider: FunctionComponent<ReactNode> = ({ children }) => {
         initialState.filterItems
     );
 
+    const [users, setUsers] = useState<DataTypes["users"]>(initialState.users);
+
+    const [currentUser, setCurrentUser] = useState<DataTypes["currentUser"]>(
+        initialState.currentUser
+    );
+
+    const [login, setLogin] = useState<DataTypes["login"]>(initialState.login);
+
     return (
         <Context.Provider
             value={{
@@ -43,6 +50,12 @@ const ContextProvider: FunctionComponent<ReactNode> = ({ children }) => {
                 setContrast,
                 filterItems,
                 setFilterItems,
+                users,
+                setUsers,
+                currentUser,
+                setCurrentUser,
+                login,
+                setLogin,
             }}
         >
             {children}

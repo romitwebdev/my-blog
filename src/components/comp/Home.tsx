@@ -3,7 +3,9 @@ import { ContextFunc } from "../../ContextProvider";
 import Content from "./Content";
 
 const Home = () => {
-    const { hamView, setHamView, contrast } = ContextFunc();
+    const { contrast } = ContextFunc();
+
+    // change background of body according to contrast
 
     useEffect(() => {
         if (contrast) {

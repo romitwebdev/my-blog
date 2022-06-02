@@ -1,13 +1,12 @@
 import { FunctionComponent, ReactNode } from "react";
-
 import { ContextFunc } from "../../ContextProvider";
 import Card from "./Card";
 
 const Content: FunctionComponent<ReactNode> = () => {
-    const { hamView, setHamView, contrast, data, setData, filterItems } =
-        ContextFunc();
+    const { contrast, filterItems } = ContextFunc();
     return (
         <>
+            {/* toggle contrast */}
             <section
                 className={
                     contrast ? "content-section active" : "content-section"
@@ -26,29 +25,6 @@ const Content: FunctionComponent<ReactNode> = () => {
                     </h2>
                     <div className="content-holder">
                         <Card />
-                        {/* <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card /> */}
-                        {/* <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card /> */}
                     </div>
                 </div>
             </section>

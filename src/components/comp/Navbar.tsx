@@ -10,8 +10,10 @@ interface Iwidth {
 }
 
 const Navbar: FunctionComponent<ReactNode> = () => {
-    const { hamView, setHamView, contrast } = ContextFunc();
+    const { setHamView, contrast } = ContextFunc();
     const [width, setWidth] = useState<Iwidth["width"]>(window.innerWidth);
+
+    // show navItems text when the width is >= 960
 
     function handleWidth() {
         if (width >= 960) {

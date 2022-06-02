@@ -542,6 +542,10 @@ body li {
   color: #ff0055;
 }
 
+.not-found {
+  font-size: 0.75rem;
+}
+
 @media screen and (min-width: 320px) {
   .card {
     width: 82%;
@@ -557,6 +561,9 @@ body li {
 @media screen and (min-width: 540px) {
   .card {
     width: 100%;
+  }
+  .not-found {
+    font-size: 1rem;
   }
 }
 

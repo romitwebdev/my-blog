@@ -35,6 +35,9 @@
         color: rgb(255, 0, 85);
     }
 }
+.not-found {
+    font-size: $base-font-sm;
+}
 
 @include breakpoint("ms") {
     .card {
@@ -49,5 +52,8 @@
 @include breakpoint("md") {
     .card {
         width: 100%;
+    }
+    .not-found {
+        font-size: $base-font-size;
     }
 }

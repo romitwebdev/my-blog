@@ -3,15 +3,9 @@ import { NavLink } from "react-router-dom";
 import { ContextFunc } from "../../ContextProvider";
 
 const Card: FunctionComponent<ReactNode> = () => {
-    const {
-        hamView,
-        setHamView,
-        contrast,
-        data,
-        setData,
-        filterItems,
-        setFilterItems,
-    } = ContextFunc();
+    const { contrast, data, filterItems } = ContextFunc();
+
+    // filter the items according to filterItems state
 
     function handleFilteredList() {
         if (filterItems === "all" || !filterItems) {
@@ -23,8 +17,11 @@ const Card: FunctionComponent<ReactNode> = () => {
         }
     }
 
+    // get the value from handleFilteredList
+
     let filteredList = useMemo(handleFilteredList, [data, filterItems]);
     return (
+        // map the filterList and show the data. If not show message
         <>
             {filteredList.length > 0 ? (
                 filteredList.map((dt) => {
@@ -49,7 +46,7 @@ const Card: FunctionComponent<ReactNode> = () => {
                     );
                 })
             ) : (
-                <p>
+                <p className="not-found">
                     no result for <strong>"{filterItems}"</strong>
                 </p>
             )}
