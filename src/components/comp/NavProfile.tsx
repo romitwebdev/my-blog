@@ -151,7 +151,11 @@ const NavProfile: FunctionComponent<ReactNode> = () => {
 
                                             <p
                                                 className={
-                                                    hamView
+                                                    contrast
+                                                        ? hamView
+                                                            ? "drop-items-list dark"
+                                                            : "drop-items-list dark active"
+                                                        : hamView
                                                         ? "drop-items-list"
                                                         : "drop-items-list active"
                                                 }
@@ -171,7 +175,11 @@ const NavProfile: FunctionComponent<ReactNode> = () => {
 
                                             <p
                                                 className={
-                                                    hamView
+                                                    contrast
+                                                        ? hamView
+                                                            ? "drop-items-list dark"
+                                                            : "drop-items-list dark active"
+                                                        : hamView
                                                         ? "drop-items-list"
                                                         : "drop-items-list active"
                                                 }
@@ -191,7 +199,11 @@ const NavProfile: FunctionComponent<ReactNode> = () => {
 
                                     <p
                                         className={
-                                            hamView
+                                            contrast
+                                                ? hamView
+                                                    ? "drop-items-list dark"
+                                                    : "drop-items-list dark active"
+                                                : hamView
                                                 ? "drop-items-list"
                                                 : "drop-items-list active"
                                         }

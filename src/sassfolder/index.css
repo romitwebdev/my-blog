@@ -328,6 +328,14 @@ body li {
 }
 
 .profile-container .drop-icons-holder .drop-items .drop-items-list {
+  color: #262626;
+}
+
+.profile-container .drop-icons-holder .drop-items .drop-items-list.dark {
+  color: white;
+}
+
+.profile-container .drop-icons-holder .drop-items .drop-items-list {
   display: block;
   font-weight: normal;
   margin-top: 0;

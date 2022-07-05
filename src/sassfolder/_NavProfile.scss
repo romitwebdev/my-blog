@@ -41,6 +41,14 @@
             margin: $base-margin * 1.5 0;
 
             .drop-items-list {
+                color: $font-dark;
+
+                &.dark {
+                    color: $font-light;
+                }
+            }
+
+            .drop-items-list {
                 display: block;
                 font-weight: normal;
                 margin-top: 0;
