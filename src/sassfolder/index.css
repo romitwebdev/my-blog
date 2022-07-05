@@ -229,6 +229,7 @@ body li {
   position: absolute;
   top: 0;
   right: 0;
+  display: block;
 }
 
 .navbar-brand .ham-menu-container .ham-menu {

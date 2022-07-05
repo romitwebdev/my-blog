@@ -15,8 +15,9 @@ const Logo: FunctionComponent<ReactNode> = () => {
 
     return (
         <>
-            <div className="navbar-brand" onClick={() => setFilterItems("all")}>
+            <div className="navbar-brand">
                 <NavLink
+                    onClick={() => setFilterItems("all")}
                     className={contrast ? "nav-link trigger" : "nav-link"}
                     to="/"
                 >
