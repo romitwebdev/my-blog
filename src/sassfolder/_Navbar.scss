@@ -1,23 +1,35 @@
 .navbar {
-    width: 100%;
+    width: auto;
     height: 100%;
     position: fixed;
     top: 0;
-    left: 0;
+    right: 100%;
     padding: $base-padding $base-padding * 1.2;
     box-shadow: 2px 2px 8px $dark-primary-bg, -2px -2px 8px $light-primary-bg;
     z-index: 1;
     background-color: $light-primary-bg;
     color: $font-dark;
+    margin-bottom: 10px;
 
     &.active {
         background-color: $dark-primary-bg;
         color: $font-light;
         box-shadow: 2px 2px 8px $dark-bg-fade, -2px -2px 8px $dark-bg-fade;
     }
+    &.hamview {
+        right: auto;
+        left: 0;
+    }
+
+    .hamburger-menu {
+        position: absolute;
+        left: 120%;
+        top: 0;
+        font-size: $base-font-lg;
+    }
 
     .navbar-holder {
-        width: auto;
+        width: 100%;
         height: 100%;
         @include flex-items(flex-start, flex-start);
         flex-direction: column;
@@ -25,17 +37,11 @@
     }
 }
 
-@include breakpoint("xs") {
-    .navbar {
-        width: auto;
-    }
-}
-
 @include breakpoint("lg") {
     .navbar {
         width: 100%;
         height: 10vh;
-        position: fixed;
+        position: sticky;
         top: 0;
         left: 0;
         .navbar-holder {

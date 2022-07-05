@@ -1,9 +1,9 @@
-import { FunctionComponent, ReactNode, useEffect, useState } from "react";
+import { FunctionComponent, ReactNode } from "react";
 import { GiBookmarklet } from "react-icons/gi";
-import { RiMenuUnfoldFill, RiMenuFoldFill } from "react-icons/ri";
 import { IconContext } from "react-icons";
 import { ContextFunc } from "../../ContextProvider";
 import { NavLink } from "react-router-dom";
+import { IoCloseSharp } from "react-icons/io5";
 
 const Logo: FunctionComponent<ReactNode> = () => {
     const { hamView, setHamView, contrast, setFilterItems } = ContextFunc();
@@ -39,7 +39,7 @@ const Logo: FunctionComponent<ReactNode> = () => {
                                 : "ham-menu",
                         }}
                     >
-                        {hamView ? <RiMenuFoldFill /> : <RiMenuUnfoldFill />}
+                        {hamView ? <IoCloseSharp /> : ""}
                     </IconContext.Provider>
                 </div>
             </div>

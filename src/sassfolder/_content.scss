@@ -8,7 +8,6 @@
     .content-container {
         width: 100%;
         min-height: 80vh;
-        padding-left: 20%;
         padding-bottom: 2%;
         padding-top: $base-padding;
 
@@ -23,29 +22,7 @@
             align-items: center;
             justify-items: center;
             gap: $base_margin * 2;
-        }
-    }
-}
-
-@include breakpoint("ms") {
-    .content-section {
-        .content-container {
-            padding-left: 15%;
-        }
-    }
-}
-@include breakpoint("sm") {
-    .content-section {
-        .content-container {
-            padding-left: 15%;
-        }
-    }
-}
-
-@include breakpoint("md") {
-    .content-section {
-        .content-container {
-            padding-left: 7%;
+            padding: 0 $base-padding;
         }
     }
 }
@@ -54,9 +31,7 @@
     .content-section {
         .content-container {
             padding: 0;
-            padding-top: 6%;
             padding-bottom: 2%;
-            min-height: 75vh;
         }
     }
 }

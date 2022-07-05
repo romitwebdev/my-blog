@@ -2,8 +2,7 @@
     width: 100%;
     height: auto;
     min-height: 80vh;
-    padding-left: 20%;
-    padding-top: 5vh;
+
     &.active {
         background: $dark-primary-bg;
         color: $font-light;
@@ -26,22 +25,8 @@
     }
 }
 
-@include breakpoint("ms") {
-    .blog-section {
-        padding-left: 18%;
-    }
-}
-
-@include breakpoint("sm") {
-    .blog-section {
-        padding-left: 14%;
-    }
-}
-
 @include breakpoint("md") {
     .blog-section {
-        padding-left: 8%;
-
         .blog-body {
             div {
                 margin-top: $base_margin * 2;
@@ -53,7 +38,6 @@
 @include breakpoint("lg") {
     .blog-section {
         padding: 0;
-        padding-top: 12vh;
 
         .blog-body {
             width: 100%;

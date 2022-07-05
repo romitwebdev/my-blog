@@ -3,7 +3,7 @@
     height: 20vh;
     background: $font-dark;
     position: relative;
-    z-index: 2;
+    bottom: 0;
     @include flex-items(center, center);
     &.active {
         background: $dark-bg-fade;
@@ -15,7 +15,6 @@
         height: auto;
         @include flex-items(center, center);
         flex-direction: column;
-        // padding: $base-padding * 5 0;
         font-size: $base-font-sm;
         span {
             margin-bottom: $base-margin;

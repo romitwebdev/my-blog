@@ -3,6 +3,7 @@ import Logo from "./Logo";
 import NavItems from "./NavItems";
 import NavProfile from "./NavProfile";
 import { ContextFunc } from "../../ContextProvider";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 interface Iwidth {
     width: number;
@@ -10,7 +11,7 @@ interface Iwidth {
 }
 
 const Navbar: FunctionComponent<ReactNode> = () => {
-    const { setHamView, contrast } = ContextFunc();
+    const { setHamView, hamView, contrast } = ContextFunc();
     const [width, setWidth] = useState<Iwidth["width"]>(window.innerWidth);
 
     // show navItems text when the width is >= 960
@@ -32,8 +33,24 @@ const Navbar: FunctionComponent<ReactNode> = () => {
 
     return (
         <>
-            <nav className={contrast ? "navbar active" : "navbar"}>
+            <nav
+                className={
+                    hamView
+                        ? contrast
+                            ? "navbar active hamview"
+                            : "navbar hamview"
+                        : contrast
+                        ? "navbar active"
+                        : "navbar"
+                }
+            >
                 <div className="navbar-holder container">
+                    <div
+                        className="hamburger-menu"
+                        onClick={() => setHamView(true)}
+                    >
+                        {hamView ? "" : <GiHamburgerMenu />}
+                    </div>
                     <Logo />
                     <NavItems />
                     <NavProfile />

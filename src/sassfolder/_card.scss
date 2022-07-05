@@ -1,5 +1,5 @@
 .card {
-    width: 70%;
+    width: 85%;
     max-width: 350px;
     height: 100%;
     padding: $base_padding;
@@ -41,12 +41,12 @@
 
 @include breakpoint("ms") {
     .card {
-        width: 82%;
+        width: 100%;
     }
 }
 @include breakpoint("sm") {
     .card {
-        width: 90%;
+        // width: 100%;
     }
 }
 @include breakpoint("md") {
