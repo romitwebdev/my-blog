@@ -1,17 +1,23 @@
+// style for nav logo container
 .navbar-brand {
     cursor: pointer;
     .nav-link {
         @include flex-items(flex-start center);
         color: $font-dark;
+
+        // change color on dark mode
         &.trigger {
             color: $font-light;
         }
     }
+
+    // style for book logo icon
     .nav-logo {
         margin-top: 0.4rem;
         font-size: $base-font-lg;
         color: $font-secondary;
     }
+
     .nav-logo.logo-active {
         font-size: $base-font-lg;
     }
@@ -22,9 +28,12 @@
         margin-left: $base-margin;
         display: none;
     }
+
     .nav-name-active {
         display: block;
     }
+
+    // style for hamburger menu
     .ham-menu-container {
         position: absolute;
         top: 0;
@@ -35,6 +44,8 @@
         .ham-menu {
             font-size: $base-font-xl;
             color: $dark-primary-bg;
+
+            // change color on dark mode
             &.active {
                 color: $font-light;
             }
@@ -42,6 +53,7 @@
     }
 }
 
+// style for different screen sizes
 @include breakpoint("md") {
     .navbar-brand {
         .nav-logo.logo-active {

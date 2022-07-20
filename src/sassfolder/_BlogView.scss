@@ -1,8 +1,10 @@
+// style for blog container
 .blog-section {
     width: 100%;
     height: auto;
     min-height: 80vh;
 
+    // change color on dark mode
     &.active {
         background: $dark-primary-bg;
         color: $font-light;
@@ -18,13 +20,14 @@
         img {
             width: 100%;
         }
-    }
-    div {
-        text-align: justify;
-        margin-top: $base_margin;
+        div {
+            text-align: justify;
+            padding: $base_margin 0;
+        }
     }
 }
 
+// style for different screen size
 @include breakpoint("md") {
     .blog-section {
         .blog-body {

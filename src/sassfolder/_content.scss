@@ -1,10 +1,13 @@
+// style for the main blog content section
 .content-section {
     width: 100%;
 
+    // change color on dark mode
     &.active {
         background-color: $dark-primary-bg;
         color: $font-light;
     }
+
     .content-container {
         width: 100%;
         min-height: 80vh;
@@ -15,6 +18,8 @@
             text-align: center;
             margin-bottom: $base_margin * 1.5;
         }
+
+        // display the cards in grid layout
         .content-holder {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -27,6 +32,7 @@
     }
 }
 
+// style for different screen size
 @include breakpoint("lg") {
     .content-section {
         .content-container {

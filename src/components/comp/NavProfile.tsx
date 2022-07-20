@@ -66,7 +66,7 @@ const NavProfile: FunctionComponent<ReactNode> = () => {
         document.addEventListener("click", handleDropMenu);
 
         return () => {
-            document.removeEventListener("clikc", handleDropMenu);
+            document.removeEventListener("click", handleDropMenu);
         };
     }, []);
 

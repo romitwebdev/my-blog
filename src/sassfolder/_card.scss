@@ -1,3 +1,4 @@
+// style for card
 .card {
     width: 85%;
     max-width: 350px;
@@ -7,6 +8,8 @@
     box-shadow: 6px 6px 9px #d3d3d3, -6px -6px 9px #ededed;
     margin-bottom: $base_margin;
     cursor: pointer;
+
+    // change color on dark mode
     &.active {
         background: $dark-primary-bg;
         color: $font-light;
@@ -39,16 +42,14 @@
     font-size: $base-font-sm;
 }
 
+// style for different screen size
+
 @include breakpoint("ms") {
     .card {
         width: 100%;
     }
 }
-@include breakpoint("sm") {
-    .card {
-        // width: 100%;
-    }
-}
+
 @include breakpoint("md") {
     .card {
         width: 100%;

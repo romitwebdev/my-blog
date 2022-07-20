@@ -1,9 +1,13 @@
+// style for nav items (middle section of navbar)
 .nav-items {
+    // styling for the links
     .nav-links {
         cursor: pointer;
         margin: $base-margin * 0.5 0;
         padding: $base-padding * 0.5 0;
         @include flex-items(flex-start, center);
+
+        // change color when clicked on each category
         &.active {
             color: rgb(255, 0, 85);
         }
@@ -22,6 +26,7 @@
     }
 }
 
+// style for different screen sizes
 @include breakpoint("md") {
     .nav-items {
         .nav-links {
@@ -35,6 +40,7 @@
 }
 @include breakpoint("lg") {
     .nav-items {
+        // keeps logo, navitems and navprofile in a line next to each other
         @include flex-items(space-around, center);
 
         .nav-links {

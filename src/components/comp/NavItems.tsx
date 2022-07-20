@@ -4,13 +4,16 @@ import { GiFilmProjector } from "react-icons/gi";
 import { IoFitnessSharp, IoFileTrayFull } from "react-icons/io5";
 import { IconContext } from "react-icons";
 import { ContextFunc } from "../../ContextProvider";
+import { useNavigate } from "react-router-dom";
 
 const NavItems: FunctionComponent<ReactNode> = () => {
     const { hamView, setFilterItems, filterItems } = ContextFunc();
 
     //  takse the argument from nav items list and set the filterItems
+    let navigate = useNavigate();
 
     function handleCats(cats: string) {
+        navigate("/");
         setFilterItems(cats);
     }
 

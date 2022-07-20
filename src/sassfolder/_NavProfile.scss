@@ -1,6 +1,8 @@
+// style for profile container on navbar
 .profile-container {
     position: relative;
 
+    // style for profile icons holder
     .profile-icons {
         padding: $base-padding 0;
         cursor: pointer;
@@ -29,6 +31,7 @@
             }
         }
     }
+    // style for drop menu
     .drop-icons-holder {
         .add-blog-link {
             &:visited {
@@ -63,12 +66,14 @@
             color: $font-primary;
         }
     }
+    // style for dark/light mode icon
     .switch-contrast {
         font-size: $base-font-lg * 0.8;
         color: $font-primary;
     }
 }
 
+// style for different screen sizes
 @include breakpoint("md") {
     .profile-container {
         .profile-icons {
@@ -102,6 +107,8 @@
                     display: block;
                 }
             }
+
+            // drop menu display as drop down on large screen
             .drop-icons-holder {
                 display: none;
                 position: absolute;
